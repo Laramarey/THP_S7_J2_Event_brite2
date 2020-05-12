@@ -1,23 +1,28 @@
 
+require 'faker'
 #remplir mon tableau users
+#
+nb_user = 10
+nb_events = 5
+nb_guests = 10
 
-20.times do |x|
-   fname = Faker::Name.first_name
+
+nb_user.times do |x|
 	  User.create(
-	  description: Faker::Quote.famous_last_words, 
-      first_name: fname,
+  	  description: Faker::Quote.famous_last_words, 
+      first_name: Faker::Name.first_name,
       last_name: Faker::Name.last_name,
-	   email: fname + "@yopmail.com")
-      puts "Seeding de l'utilisateur numéro #{x}"
+      email: Faker::Name.first_name+'@yopmail.com',
+    puts "Seeding de l'utilisateur numéro #{x}"
 end
 
 #remplir mon tableau events
 
       #for the random startdate
-t1 = Time.parse("2021-11-01 14:40:34")
+t1 = Time.parse("2020-01-01 14:40:34")
 t2 = Time.parse("2022-01-01 00:00:00")
 
-2.times do |x|
+nb_events.times do |x|
     Event.create(
     start_date: rand(t1..t2),
     duration: rand(5..100)*5,
@@ -31,7 +36,7 @@ end
 
 
 #remplir mon tableau attendances
-20.times do |x|
+nb_guests.times do |x|
 	Attendance.create(
 		user_id: User.all.sample.id
 		event_id: Event.all.sample.id)

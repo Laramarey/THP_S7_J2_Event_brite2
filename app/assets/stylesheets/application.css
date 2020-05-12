@@ -13,3 +13,9 @@
  *= require_tree .
  *= require_self
  */
+.jumbotron-hero {
+  background-image: url("https://unsplash.com/photos/JNuKyKXLh8U");
+  background-position: center;
+  background-size: cover;
+  height: 200px;
+}

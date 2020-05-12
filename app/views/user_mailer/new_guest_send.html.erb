@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Hello  <%= @admin.first_name %> !</h1>
+    <p>
+     Nouvel invité en vu pour l'event  <%= @attendance.event.title %> se déroulant le <%= @attendance.event.start_date.strftime("%d/%m/%Y") %>.
+    </p>
+    <p>
+      Il/Elle s'appelle <%= @attendance.user.first_name %>.
+    </p>
+    <p> Be ready !
+  </body>
+</html>
