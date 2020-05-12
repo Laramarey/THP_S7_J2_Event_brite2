@@ -17,7 +17,7 @@ end
 t1 = Time.parse("2021-11-01 14:40:34")
 t2 = Time.parse("2022-01-01 00:00:00")
 
-20.times do |x|
+2.times do |x|
     Event.create(
     start_date: rand(t1..t2),
     duration: rand(5..100)*5,
